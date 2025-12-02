@@ -1,12 +1,10 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-// Handle API Key Saving directly here for simplicity
 if ( isset( $_POST['gstv_save_apikey'] ) && check_admin_referer( 'gstv_apikey_action', 'gstv_apikey_nonce' ) ) {
     update_option( 'gstv_api_key', sanitize_text_field( $_POST['gstv_api_key'] ) );
     echo '<div class="notice notice-success is-dismissible"><p>API Key Saved!</p></div>';
 }
-
 $api_key = get_option( 'gstv_api_key' );
 ?>
 
@@ -22,9 +20,6 @@ $api_key = get_option( 'gstv_api_key' );
                 <label for="gstv_api_key"><strong>Google Sheets API Key:</strong></label><br>
                 <input type="text" id="gstv_api_key" name="gstv_api_key" value="<?php echo esc_attr( $api_key ); ?>" class="regular-text" placeholder="Paste API Key here">
                 <input type="submit" name="gstv_save_apikey" class="button button-secondary" value="Save API Key">
-            </p>
-            <p class="description">
-                Don't have a key? <a href="https://console.cloud.google.com/" target="_blank">Go to Google Cloud Console</a>, create a project, enable "Google Sheets API", and create an API Key.
             </p>
         </form>
     </div>
@@ -53,8 +48,17 @@ $api_key = get_option( 'gstv_api_key' );
                     <!-- Javascript will fill this -->
                 </select>
                 
+                <!-- NEW: Column Selection Area -->
+                <div id="gstv-column-settings" style="display:none; margin:15px 0; padding:15px; background:#fff; border:1px solid #eee;">
+                    <label><strong>C. Select & Rename Columns</strong></label>
+                    <p class="description">Uncheck to hide. Edit text to rename.</p>
+                    <div id="gstv-columns-list" style="max-height:300px; overflow-y:auto; padding:10px 0;">
+                        <!-- Columns will appear here -->
+                    </div>
+                </div>
+
                 <br>
-                <label><strong>C. Name this Table</strong></label><br>
+                <label><strong>D. Name this Table</strong></label><br>
                 <input type="text" id="gstv-table-name" class="regular-text" placeholder="e.g. Product List">
                 
                 <br><br>

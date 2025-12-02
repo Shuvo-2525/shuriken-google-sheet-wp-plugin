@@ -1,0 +1,32 @@
+.gstv-table-container {
+    overflow-x: auto; /* Handles horizontal scroll on mobile */
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.gstv-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.gstv-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.gstv-table th, 
+.gstv-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.gstv-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.gstv-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}

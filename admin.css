@@ -1,0 +1,33 @@
+.gstv-wrapper {
+    max-width: 1000px;
+}
+
+.gstv-card {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.gstv-card h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.gstv-input-group {
+    margin-bottom: 15px;
+}
+
+.gstv-spinner {
+    float: none;
+    margin: 0 0 0 10px;
+    vertical-align: middle;
+}
+
+.gstv-step {
+    margin-bottom: 15px;
+}
